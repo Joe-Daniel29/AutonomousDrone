@@ -76,11 +76,11 @@ def arm_and_takeoff(target_altitude):
     print("Hovering for 5 seconds...")
     time.sleep(5)
 
-    # Pitch forward by moving forward at 5 m/s for 5 seconds
+   
     print("Pitching forward (moving forward at 5 m/s)...")
-    send_ned_velocity(1, 0, 0, 2)  # 5 m/s forward, 0 m/s right, 0 m/s down
+    send_ned_velocity(1, 0, 0, 2)  
 
-    # Land the vehicle
+    
     print("Landing...")
     vehicle.mode = VehicleMode("LAND")
     while vehicle.location.global_relative_frame.alt > 0.1:
@@ -88,9 +88,9 @@ def arm_and_takeoff(target_altitude):
         time.sleep(1)
     print("Landed!")
 
-# Run the takeoff function
+
 try:
-    arm_and_takeoff(1.5)  # Take off to 1.2 meters
+    arm_and_takeoff(1.5)  
 finally:
     print("Closing vehicle connection...")
     vehicle.close()
